@@ -1,0 +1,146 @@
+.leftsquare {
+    background-color: #0e0e0e;
+    position: fixed;
+    width: 25vw;
+    height: 101vh;
+    left: 0; 
+    top: 0; 
+    z-index: 10;
+}
+
+html {
+    background-color: #282828;
+}
+
+.btnprofiel {
+    color: #d9ffd8;
+    width: 23vw;
+    height: 6vh;
+    font-size: 5vh;
+    position: fixed;
+    left: 0.5vw;
+    top: 80vh;  
+    background-color: #4CAF50;
+    border-radius: 10px;
+    z-index: 20; 
+}
+.btnuitloggen {
+    color: #d9ffd8;
+    width: 23vw;
+    height: 6vh;
+    font-size: 5vh;
+    position: fixed;
+    left: 0.5vw;
+    top: 90vh;  
+    background-color: #4CAF50;
+    border-radius: 10px;
+    z-index: 20; 
+}
+
+.logo {
+    position: fixed;
+    left: 12%; 
+    top: 10%; 
+    transform: translateX(-50%);
+    width: 10vw;
+    height: auto;
+    z-index: 15; 
+}
+
+.postform {
+    position: absolute;
+    top: 12vh;
+    left: 31vw;
+    width: 61vw;
+    height: 26vh;
+    background-color: #131313;
+    border-radius: 20px;
+    border: 1vh dashed #4CAF50;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+}
+
+.postform label {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    font-size: 3vh;
+    color: #d9ffd8;
+    margin-bottom: 1vh;
+}
+
+.postform input[type="text"] {
+    width: 80%;
+    padding: 1vh;
+    font-size: 2.5vh;
+    border-radius: 10px;
+    border: 2px solid #4CAF50;
+    background-color: #1a1a1a;
+    color: white;
+    margin-bottom: 2vh;
+    outline: none;
+}
+
+.postform input[type="text"]::placeholder {
+    color: #bbbbbb;
+}
+
+.postform input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1.5vh 4vh;
+    font-size: 2.5vh;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.postform input[type="submit"]:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.postform input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+.posts-container {
+    margin-top: 30px;
+    padding: 10px;
+    position: absolute;
+    width: 60vw;
+    left: 33vw;
+    top: 50vh;
+}
+
+.post {
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.post-username {
+    font-weight: bold;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.post-content {
+    font-size: 1rem;
+}
+
