@@ -40,10 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<form action="login.php" method="post" id="loginForm">
-    <label for="gebruikersnaam">Your Username</label>
+<form action="login.php" method="post" id="loginForm" autocomplete="off">
+    <label for="gebruikersnaam">Uw gebruikersnaam</label>
     <input type="text" name="gebruikersnaam" id="gebruikersnaam" placeholder="Username" required>
-    <label for="wachtwoord">Your Password</label>
+    <label for="wachtwoord">Uw wachtwoord</label>
     <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Password" required>
     <input type="submit" value="Login">
 </form>
@@ -55,14 +55,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <img class="logo" src="logo.png">
 
 <script>
-    // Voeg deze script toe om de formulier velden te resetten na een mislukte login
     const form = document.getElementById('loginForm');
 
-    // Controleer of er een parameter is doorgegeven in de URL (login failed)
     const urlParams = new URLSearchParams(window.location.search);
     const loginFailed = urlParams.has('loginfailed');
     if (loginFailed) {
-        // Als de login mislukt is, reset de velden
+
         form.reset();
         alert("Login failed, please try again.");
     }

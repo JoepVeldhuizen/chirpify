@@ -10,10 +10,10 @@
 </head>
 <body>
 
-<form action="register_account.php" method="post">
-    <label for="gebruikersnaam">Your Username</label>
+<form action="register_account.php" method="post" autocomplete="off">
+    <label for="gebruikersnaam">Uw gebruikersnaam</label>
     <input type="text" name="gebruikersnaam" id="gebruikersnaam" placeholder="Username">
-    <label for="wachtwoord">Your Password</label>
+    <label for="wachtwoord">Uw wachtwoord</label>
     <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Password">
     <input type="submit" value="Register">
 </form>
