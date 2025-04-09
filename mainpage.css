@@ -67,7 +67,7 @@ body {
 .postform {
     position: absolute;
     top: 15vh;
-    left: 31vw;
+    left: 36vw;
     width: 60vw;
     height: auto;
     max-width: 800px;
@@ -125,7 +125,6 @@ body {
     transform: scale(0.95);
 }
 
-/* Post container */
 .posts-container {
     margin-top: 30px;
     padding: 10px;
@@ -138,7 +137,6 @@ body {
     gap: 20px;
 }
 
-/* Post styling */
 .post {
     background-color: #333;
     color: #fff;
@@ -212,7 +210,6 @@ body {
     color: #d9ffd8;
 }
 
-/* Comment form */
 .comment-form-container {
     margin-top: 10px;
     padding: 10px;
@@ -246,7 +243,6 @@ body {
     background-color: #45a049;
 }
 
-/* Delete button */
 .delete-btn {
     background-color: red;
     color: white;
@@ -262,7 +258,6 @@ body {
     background-color: darkred;
 }
 
-/* Comment styling */
 .comments-container {
     margin-top: 20px;
 }
@@ -284,7 +279,6 @@ body {
     margin-top: 5px;
 }
 
-/* Image styles */
 .post-images {
     display: flex;
     flex-wrap: wrap;
@@ -299,7 +293,6 @@ body {
     object-fit: cover;
 }
 
-/* Upload label */
 .upload-label {
     background-color: #4CAF50;
     color: #d9ffd8;
@@ -322,23 +315,22 @@ body {
 }
 
 .imgupload {
-    visibility: hidden;
     width: 100%;
     max-width: 300px;
     margin: 10px 0;
     padding: 10px;
-    background-color: #f0f0f0;
-    border: 2px solid #ddd;
+    background-color: #4CAF50;
+    border: 2px solid #348036;
     border-radius: 5px;
     font-size: 16px;
-    color: #333;
+    color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .imgupload:hover {
-    background-color: #e9e9e9;
-    border-color: #bbb;
+    background-color: #1d8433;
+    border-color: #0f4913;
 }
 
 label[for="image"] {
@@ -349,15 +341,6 @@ label[for="image"] {
     color: #ffffff;
 }
 
-label[for="image"]:hover {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-    font-size: 16px;
-    color: #b9b9b9;
-}
-
-/* Media Queries for responsiveness */
 @media (max-width: 768px) {
     .leftsquare {
         width: 40vw;

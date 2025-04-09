@@ -2,7 +2,6 @@
 session_start();
 require "database/conn.php";
 
-// check of gebruiker is ingelogd
 if (!isset($_SESSION['user_id'])) {
     header("Location: inloggen.php");
     exit();
@@ -10,26 +9,23 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// gebruikers info ophalen
 $stmt = $conn->prepare("SELECT * FROM accounts WHERE id = :user_id");
 $stmt->bindParam(':user_id', $user_id);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// checken of gebruiker bestaat
 if (!$user) {
     echo "Gebruiker niet gevonden.";
     exit();
 }
 
-// Verwerken van bio update
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['bio'])) {
     $bio = trim($_POST['bio']);
     $stmt = $conn->prepare("UPDATE accounts SET bio = :bio WHERE id = :user_id");
     $stmt->bindParam(':bio', $bio);
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
-    header("Location: profiel.php");  // Redirect na update
+    header("Location: profiel.php"); 
     exit();
 }
 ?>
@@ -40,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['bio'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="profiel.css">
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico">
     <title>Profiel</title>
 </head>
 <body>

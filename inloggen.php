@@ -9,19 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$user) {
-        // Als de gebruiker niet bestaat, stuur door naar loginfailed.php en reset de velden
         header('Location: loginfailed.php');
         exit();
     }
 
     if (!password_verify($_POST['wachtwoord'], $user['password'])) {
-        // Als het wachtwoord onjuist is, stuur door naar loginfailed.php en reset de velden
         header('Location: loginfailed.php');
         exit();
     }
 
-    // Login geslaagd, start de sessie en stuur door naar main.php
-    $_SESSION['user_id'] = $user['id']; // Gebruik het juiste ID voor sessie
+    $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $_POST['gebruikersnaam'];
     header('Location: main.php');
     exit();
@@ -37,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico">
 </head>
 <body>
 

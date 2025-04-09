@@ -2,7 +2,6 @@
 session_start();
 require "database/conn.php";
 
-// check of ze zijn ingelogd
 if (!isset($_SESSION['user_id'])) {
     header("Location: inloggen.php");
     exit();
@@ -10,13 +9,11 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// haal user info op
 $stmt = $conn->prepare("SELECT * FROM accounts WHERE id = :user_id");
 $stmt->bindParam(':user_id', $user_id);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// kijk of ze bestaan
 if (!$user) {
     echo "Gebruiker niet gevonden.";
     exit();
@@ -62,6 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['current_password'], $_
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="profiel.css">
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico">
     <title>Wachtwoord wijzigen</title>
 </head>
 <body>
