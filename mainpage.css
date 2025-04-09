@@ -1,66 +1,84 @@
-.leftsquare {
-    background-color: #0e0e0e;
-    position: fixed;
-    width: 25vw;
-    height: 101vh;
-    left: 0; 
-    top: 0; 
-    z-index: 10;
+/* Algemene stijl */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Arial", sans-serif;
 }
 
 html {
     background-color: #282828;
+    font-size: 16px; /* Basis font size */
 }
 
-.btnprofiel {
-    color: #d9ffd8;
-    width: 23vw;
-    height: 6vh;
-    font-size: 5vh;
-    position: fixed;
-    left: 0.5vw;
-    top: 80vh;  
-    background-color: #4CAF50;
-    border-radius: 10px;
-    z-index: 20; 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-.btnuitloggen {
-    color: #d9ffd8;
-    width: 23vw;
-    height: 6vh;
-    font-size: 5vh;
+
+/* Linkerkant (Sidebar) */
+.leftsquare {
+    background-color: #0e0e0e;
     position: fixed;
-    left: 0.5vw;
-    top: 90vh;  
-    background-color: #4CAF50;
-    border-radius: 10px;
-    z-index: 20; 
+    width: 25vw;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
 }
 
 .logo {
     position: fixed;
-    left: 12%; 
-    top: 10%; 
+    left: 12%;
+    top: 10%;
     transform: translateX(-50%);
     width: 10vw;
     height: auto;
-    z-index: 15; 
+    z-index: 15;
 }
 
+/* Profiel en uitloggen knoppen */
+.btnprofiel, .btnuitloggen {
+    color: #d9ffd8;
+    width: 23vw;
+    height: 6vh;
+    font-size: 5vh;
+    position: fixed;
+    left: 1vw;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    z-index: 20;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnprofiel {
+    top: 80vh;
+}
+
+.btnuitloggen {
+    top: 90vh;
+}
+
+/* Post form */
 .postform {
     position: absolute;
-    top: 12vh;
+    top: 15vh;
     left: 31vw;
-    width: 61vw;
-    height: 26vh;
+    width: 60vw;
+    height: auto;
+    max-width: 800px;
+    padding: 2vh;
     background-color: #131313;
     border-radius: 20px;
     border: 1vh dashed #4CAF50;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 2vh;
+    justify-content: center;
 }
 
 .postform label {
@@ -72,7 +90,7 @@ html {
 }
 
 .postform input[type="text"] {
-    width: 80%;
+    width: 100%;
     padding: 1vh;
     font-size: 2.5vh;
     border-radius: 10px;
@@ -107,6 +125,7 @@ html {
     transform: scale(0.95);
 }
 
+/* Post container */
 .posts-container {
     margin-top: 30px;
     padding: 10px;
@@ -114,14 +133,20 @@ html {
     width: 60vw;
     left: 33vw;
     top: 50vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+/* Post styling */
 .post {
     background-color: #333;
     color: #fff;
     margin-bottom: 15px;
     padding: 15px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .post-header {
@@ -142,19 +167,29 @@ html {
 
 .post-content {
     font-size: 1rem;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.post-actions .like-btn,
+.comment-btn {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .post-actions .like-btn {
     background-color: white;
     border: 1px solid #ff4d4d;
     color: #ff4d4d;
-    padding: 5px 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    position: relative;
-    left: 52vw;
 }
 
 .post-actions .like-btn:hover {
@@ -167,18 +202,180 @@ html {
     color: white;
 }
 
+.comment-btn {
+    background-color: #ffffff;
+    color: rgb(95, 179, 87);
+}
+
+.comment-btn:hover {
+    background-color: rgb(95, 179, 87);
+    color: #d9ffd8;
+}
+
+/* Comment form */
+.comment-form-container {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.comment-form-container textarea {
+    width: 95%;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.comment-form-container input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Delete button */
 .delete-btn {
-    background-color: #ff4d4d;
+    background-color: red;
     color: white;
     border: none;
-    padding: 5px 15px;
-    font-size: 1.2rem;
+    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
 .delete-btn:hover {
-    background-color: #ff0000;
+    background-color: darkred;
 }
 
+/* Comment styling */
+.comments-container {
+    margin-top: 20px;
+}
+
+.comment {
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.comment-text {
+    margin-top: 5px;
+}
+
+/* Image styles */
+.post-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.post-images img {
+    width: calc(50% - 5px);
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Upload label */
+.upload-label {
+    background-color: #4CAF50;
+    color: #d9ffd8;
+    padding: 1.5vh 4vh;
+    font-size: 2.2vh;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 2vh;
+    transition: background-color 0.3s ease, transform 0.2s;
+    display: inline-block;
+}
+
+.upload-label:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.upload-label:active {
+    transform: scale(0.95);
+}
+
+.imgupload {
+    visibility: hidden;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.imgupload:hover {
+    background-color: #e9e9e9;
+    border-color: #bbb;
+}
+
+label[for="image"] {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+label[for="image"]:hover {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 16px;
+    color: #b9b9b9;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .leftsquare {
+        width: 40vw;
+    }
+    .posts-container {
+        width: 100%;
+        left: 0;
+        top: 20vh;
+    }
+    .btnprofiel, .btnuitloggen {
+        width: 40vw;
+        font-size: 4vh;
+    }
+    .postform {
+        width: 90vw;
+        left: 5vw;
+    }
+    .logo {
+        width: 15vw;
+    }
+}

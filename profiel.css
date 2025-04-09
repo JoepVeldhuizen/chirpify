@@ -1,0 +1,149 @@
+
+body {
+    font-family: "Fira Sans", sans-serif;
+    background-color: #282828;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.leftsquare {
+    background-color: #0e0e0e;
+    position: fixed;
+    width: 25vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    position: fixed;
+    left: 12%;
+    top: 10%;
+    transform: translateX(-50%);
+    width: 10vw;
+    height: auto;
+    z-index: 15;
+}
+
+.btnprofiel {
+    color: #d9ffd8;
+    width: 23vw;
+    height: 6vh;
+    font-size: 5vh;
+    position: fixed;
+    left: 0.5vw;
+    top: 80vh;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    z-index: 20;
+    border: none;
+    cursor: pointer;
+}
+
+.btnuitloggen {
+    color: #d9ffd8;
+    width: 23vw;
+    height: 6vh;
+    font-size: 5vh;
+    position: fixed;
+    left: 0.5vw;
+    top: 90vh;
+    background-color: #f44336;
+    border-radius: 10px;
+    z-index: 20;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-container {
+    position: absolute;
+    top: 25vh;
+    left: 45vw;
+    width: 30vw;
+    padding: 2vw;
+    background-color: #333;
+    border-radius: 15px;
+    text-align: center;
+    color: #d9ffd8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+.profile-container h2 {
+    font-size: 3vh;
+    margin-bottom: 15px;
+}
+
+.profile-container p {
+    font-size: 2.5vh;
+    margin: 10px 0;
+}
+
+.edit-profile-container a {
+    display: block;
+    margin-top: 20px;
+    font-size: 2.5vh;
+    text-decoration: none;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    padding: 5px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.edit-profile-container a:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.05);
+}
+
+.edit-profile-container a:active {
+    transform: scale(0.95);
+}
+
+.edit-profile-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.edit-profile-container input[type="text"],
+.edit-profile-container input[type="email"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 2vh;
+    border-radius: 10px;
+    border: 2px solid #4CAF50;
+    background-color: #1a1a1a;
+    color: #fff;
+    outline: none;
+}
+
+.edit-profile-container input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 2.5vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.edit-profile-container input[type="submit"]:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.edit-profile-container input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+.wachtwoord {
+    color: #45a049;
+}
